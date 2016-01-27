@@ -1,6 +1,6 @@
 {
   "name": "browserstack-suite",
-  "description": "Private UI for Browserstack Automate API",
+  "description": "Grant access to Browserstack Automate API build results",
   "version": "0.0.1",
   "license": "MIT",
   "author": "Simon Tarchichi <kartsims@gmail.com>",
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "node keystone.js",
-    "browsers": "node bin/browsers.js"
+    "update-browsers": "node bin/browsers.js"
   },
   "main": "keystone.js",
   "devDependencies": {

@@ -1,3 +1,5 @@
+require('dotenv').load();
+
 var Browser = require('../lib/Browser')();
 var client = require('../lib/browserstackClient');
 

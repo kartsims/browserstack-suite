@@ -1,3 +1,5 @@
+require('dotenv').load();
+
 var chalk = require('chalk'),
 	async = require('async'),
 	program = require('commander'),
