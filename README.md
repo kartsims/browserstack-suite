@@ -9,7 +9,7 @@ Test your applications and integrate with your favorite CI tool.
 - CLI to trigger builds (making it easy to integrate with your CI tool)
 - Multiple application instances
 - Specific browser list for each instance
-- Password-protected UI (define passyord for each applicaton)
+- Password-protected UI (define password for each applicaton)
 - Administration interface (♥  [KeystoneJS](http://keystonejs.com/))
 - No more testing headache with VMs and mobile devices
 
@@ -17,9 +17,9 @@ Test your applications and integrate with your favorite CI tool.
 
 This tool uses [BrowserStack](https://www.browserstack.com)'s awesome features. **You will need a [BrowserStack Automate account](https://www.browserstack.com/accounts/subscriptions) to use it.** 
 
-Public UI is a simple JS app based on [Vue.js](http://vuejs.org/). Default URL : http://localhost:3000
+Public UI is a simple JS app based on [Vue.js](http://vuejs.org/). Default URL : [http://localhost:3000](http://localhost:3000)
 
-Admin interface is provided by the awesome work of the [KeystoneJS](http://keystonejs.com/) team. You may want to check them out on their [GitHub repo](https://github.com/keystonejs/keystone/). Default URL : http://localhost:3000/keystone
+Admin interface is provided by the awesome work of the [KeystoneJS](http://keystonejs.com/) team. You may want to check them out on their [GitHub repo](https://github.com/keystonejs/keystone/). Default URL : [http://localhost:3000/keystone](http://localhost:3000/keystone)
 
 ## Install
 
