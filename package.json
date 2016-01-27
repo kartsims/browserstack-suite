@@ -1,0 +1,52 @@
+{
+  "name": "browserstack-suite",
+  "description": "Private UI for Browserstack Automate API",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Simon Tarchichi <kartsims@gmail.com>",
+  "dependencies": {
+    "async": "^1.4.2",
+    "browserstack": "kartsims/node-browserstack",
+    "browserstack-webdriver": "^2.41.1",
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "dotenv": "^1.1.0",
+    "fs-extra": "0.26.4",
+    "keystone": "^0.3.14",
+    "moment": "^2.10.6",
+    "underscore": "^1.8.3"
+  },
+  "engines": {
+    "node": ">=0.10.22",
+    "npm": ">=1.3.14"
+  },
+  "scripts": {
+    "start": "node keystone.js",
+    "browsers": "node bin/browsers.js"
+  },
+  "main": "keystone.js",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.1.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express-server": "^0.5.1",
+    "grunt-node-inspector": "^0.4.1",
+    "grunt-nodemon": "^0.4.1",
+    "jshint-stylish": "^2.1.0",
+    "load-grunt-configs": "^0.4.3",
+    "load-grunt-tasks": "^3.4.0",
+    "open": "0.0.5",
+    "time-grunt": "^1.3.0"
+  },
+  "keywords": [
+    "automation",
+    "browserstack",
+    "screenshots"
+  ],
+  "repository": "kartsims/browserstack-suite",
+  "bugs": {
+    "url": "https://github.com/kartsims/browserstack-suite/issues",
+    "email": "kartsims@gmail.com"
+  }
+}

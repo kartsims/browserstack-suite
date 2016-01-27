@@ -1,0 +1,77 @@
+doctype html
+html
+
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+		title= title || 'BrowserStack Suite'
+
+		link(href="/styles/site.min.css", rel="stylesheet")
+
+	body
+	
+		div.topbar
+			a.help(href='#',onclick='$("#key-bindings").slideToggle();return false')
+				span.glyphicon.glyphicon-question-sign
+				| &nbsp;Key bindings
+			a.signout(href='/signout') Sign Out&nbsp;&nbsp;
+				span.glyphicon.glyphicon-log-out
+		
+		div#app.container-fluid
+		
+			div#key-bindings.jumbotron(style='display:none')
+					h1 Key bindings
+					p
+						kbd.glyphicon.glyphicon-arrow-left
+						| &nbsp; /&nbsp; 
+						kbd.glyphicon.glyphicon-arrow-right
+						| &nbsp; :&nbsp; Change browser
+					p
+						kbd.glyphicon.glyphicon-arrow-down
+						| &nbsp; /&nbsp; 
+						kbd.glyphicon.glyphicon-arrow-up
+						| &nbsp; :&nbsp; Change URL
+					p
+						kbd Ctrl
+						| &nbsp; +&nbsp; 
+						kbd.glyphicon.glyphicon-arrow-left
+						| &nbsp; /&nbsp; 
+						kbd.glyphicon.glyphicon-arrow-right
+						| &nbsp; :&nbsp; Go to next/previous build
+					p 
+						button.btn.btn-primary.btn-lg(@click.prevent='hideKeyPanels') Got it!
+			
+			
+			div.row.form-group
+				div.col-xs-2.col-md-1
+					a.btn.btn-default.btn-block(@click='switchBuild(1)',v-bind:disabled='builds.indexOf(currentBuild)==(builds.length-1)')
+						span.glyphicon.glyphicon-chevron-left
+				div.col-xs-8.col-md-10.text-center.build-title.
+					{{currentBuild.appInstance.name}}
+					- {{currentBuild.finishedAt}}
+				div.col-xs-2.col-md-1
+					a.btn.btn-default.btn-block(@click='switchBuild(-1)',v-bind:disabled='builds.indexOf(currentBuild)==0')
+						span.glyphicon.glyphicon-chevron-right
+		
+			div.row.form-group
+				div.col-xs-6
+					select#current-browser.form-control(v-model='currentScreenshotBrowser',@change.prevent='switchBrowser()')
+						option(v-for='browserName in currentBuildBrowsers') {{browserName}}
+				div.col-xs-6
+					select#current-uri.form-control(v-model='currentScreenshotUri',@change.prevent='switchUri()')
+						option(v-for='uri in currentBuild.app.uris') {{uri}}
+						
+
+			div(v-if='currentBuild===null')
+				p.lead Aucun build sélectionné
+			div(v-else)
+				div.screenshot
+					img(src='/data/screenshots/{{currentScreenshot.filename}}')
+
+		//- JS
+		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
+		script(src='/js/vue.js')
+		script(src='/js/app.js')

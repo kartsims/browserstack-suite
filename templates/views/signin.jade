@@ -1,0 +1,37 @@
+include ../mixins/flash-messages
+
+doctype html
+html
+
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+		title= title || 'BrowserStack Suite'
+
+		link(href="/styles/signin.min.css", rel="stylesheet")
+
+	body
+
+		+flash-messages(messages)
+
+		div.container
+			div.row
+				div.col-xs-8.col-xs-offset-2.col-md-6.col-xs-offset-3
+					h2(style='padding:4em 0 1em') Restricted access
+					form.row(method='get', action='/signin')
+						div.col-xs-12.col-md-9.form-group
+							div.input-group
+								span.input-group-addon
+									span.glyphicon.glyphicon-lock
+								input.form-control(name='p', type='password')
+						div.col-xs-12.col-md-3.form-group
+							button.btn.btn-primary.btn-block(type='submit') Sign In
+					div
+						br
+						br
+						small: a(href='/keystone') Administration area
+
+		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
