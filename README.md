@@ -64,3 +64,5 @@ This list **needs to be updated on regularly**, by running :
 	npm run update-browsers
 
 This will keep you up-to-date with the latest supported browsers.
+
+Test commit
